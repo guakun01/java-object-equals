@@ -8,4 +8,12 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            return ((Person) obj).firstName.equals(this.firstName) && ((Person) obj).lastName.equals(this.lastName);
+        }
+        return false;
+    }
 }
