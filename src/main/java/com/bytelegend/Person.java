@@ -9,10 +9,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public boolean equals(Person person1, Person person2)
-    {
-        if (null == person1 || null == person2)
+    @Override
+    public boolean equals(Object obj) {
+        if (null == obj)
             return false;
-        return person1.firstName.equals(person2.firstName) && person1.lastName.equals(person2.lastName);
+        return this.firstName.equals(((Person)obj).firstName)
+                && this.lastName.equals(((Person)obj).lastName) ;
     }
 }
