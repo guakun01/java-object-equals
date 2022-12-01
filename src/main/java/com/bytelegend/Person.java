@@ -16,4 +16,9 @@ public class Person {
         Person person = (Person) o;
         return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
+    }
 }
