@@ -1,5 +1,7 @@
 package com.bytelegend;
 
+import java.util.Objects;
+
 public class Person {
     private final String firstName;
     private final String lastName;
@@ -7,5 +9,21 @@ public class Person {
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object p) {
+        if (this == p) {
+            return true;
+        }
+        if (p instanceof Person) {
+            return this.firstName.equals(((Person) p).firstName) && this.lastName.equals(((Person) p).lastName);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName);
     }
 }
